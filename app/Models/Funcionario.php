@@ -163,4 +163,35 @@ class Funcionario extends Model
         $stmt = $this->db->prepare("DELETE FROM funcionario WHERE id = ?");
         return $stmt->execute([$id]);
     }
+
+    public function relatorio(string $nome = '', string $cargoId = ''): array
+    {
+        try {
+            $sql = "SELECT f.nome, f.telefone, c.nome as cargo_nome, c.salario 
+                    FROM funcionario f 
+                    JOIN cargo c ON f.cargoId = c.id 
+                    WHERE 1=1";
+            
+            $params = [];
+
+            if (!empty(trim($nome))) {
+                $sql .= " AND f.nome LIKE ?";
+                $params[] = "%" . trim($nome) . "%";
+            }
+
+            if (!empty(trim($cargoId))) {
+                $sql .= " AND f.cargoId = ?";
+                $params[] = trim($cargoId);
+            }
+
+            $sql .= " ORDER BY f.nome ASC";
+
+            $stmt = $this->db->prepare($sql);
+            $stmt->execute($params);
+            return $stmt->fetchAll();
+        } catch (PDOException $e) {
+            error_log("Erro ao gerar relatório: " . $e->getMessage());
+            return [];
+        }
+    }
 }
