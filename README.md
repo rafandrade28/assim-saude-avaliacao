@@ -1,4 +1,4 @@
-# Avaliação Técnica – Desenvolvedor PHP | Assim Saúde
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d0bd814b-aad7-44c6-806b-2c82d70e88b0" /># Avaliação Técnica – Desenvolvedor PHP | Assim Saúde
 
 ## Objetivo
 
