@@ -1,5 +1,3 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d0bd814b-aad7-44c6-806b-2c82d70e88b0" /># Avaliação Técnica – Desenvolvedor PHP | Assim Saúde
-
 ## Objetivo
 
 Este projeto foi desenvolvido como parte da avaliação técnica para a vaga de Desenvolvedor PHP da Assim Saúde.
