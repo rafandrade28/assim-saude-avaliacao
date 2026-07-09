@@ -2,12 +2,15 @@
 
 namespace Core;
 
+use PDO;
+
 abstract class Model
 {
-    protected Database $db;
+    protected PDO $db;
 
     public function __construct()
     {
-        $this->db = new Database();
+        // Obtém a instância única da conexão PDO
+        $this->db = Database::getInstance();
     }
 }

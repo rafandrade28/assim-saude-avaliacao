@@ -8,6 +8,6 @@ class HomeController extends Controller
 {
     public function index(): void
     {
-        $this->view('home/index', ['title' => 'Página Inicial']);
+        $this->view('home/index', ['title' => 'Sistema de Gestão']);
     }
 }
